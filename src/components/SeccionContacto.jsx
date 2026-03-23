@@ -2,6 +2,9 @@
 import "../styles/secciones.css";
 import "../styles/formularios.css";
 
+// Importamos el formulario separado
+import FormularioContacto from "./FormularioContacto";
+
 function SeccionContacto() {
   return (
     <section className="seccion seccion-contacto" id="contacto">
@@ -39,39 +42,7 @@ function SeccionContacto() {
           </div>
 
           {/* Columna derecha con formulario */}
-          <form className="formulario-contacto">
-            <div className="formulario__grupo">
-              <label htmlFor="nombre">FULL NAME</label>
-              <input type="text" id="nombre" placeholder="John Doe" />
-            </div>
-
-            <div className="formulario__grupo">
-              <label htmlFor="correo">EMAIL ADDRESS</label>
-              <input
-                type="email"
-                id="correo"
-                placeholder="john@example.com"
-              />
-            </div>
-
-            <div className="formulario__grupo">
-              <label htmlFor="telefono">PHONE NUMBER</label>
-              <input type="text" id="telefono" placeholder="+502 1234 5678" />
-            </div>
-
-            <div className="formulario__grupo">
-              <label htmlFor="mensaje">MESSAGE</label>
-              <textarea
-                id="mensaje"
-                rows="5"
-                placeholder="Tell us about your shipping requirements..."
-              ></textarea>
-            </div>
-
-            <button type="submit" className="formulario__boton">
-              SEND MESSAGE
-            </button>
-          </form>
+          <FormularioContacto />
         </div>
       </div>
     </section>

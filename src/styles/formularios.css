@@ -1,4 +1,5 @@
-.formulario-contacto {
+.formulario-contacto,
+.formulario-cotizador {
   border: 1px solid var(--color-borde);
   background-color: transparent;
   padding: 26px;
@@ -17,6 +18,13 @@
   margin-bottom: 8px;
 }
 
+.formulario__subtitulo {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--color-gris);
+  margin-bottom: 10px;
+}
+
 .formulario__grupo input,
 .formulario__grupo textarea,
 .formulario__grupo select {
@@ -25,6 +33,19 @@
   background-color: var(--color-fondo);
   padding: 14px 14px;
   outline: none;
+}
+
+.formulario__check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--color-negro);
+  font-size: 0.92rem;
+}
+
+.formulario__check input {
+  width: auto;
 }
 
 .formulario__boton {
@@ -36,4 +57,16 @@
   cursor: pointer;
   letter-spacing: 0.08em;
   font-size: 0.76rem;
+}
+
+.formulario__error {
+  margin-top: 8px;
+  color: #a33b3b;
+  font-size: 0.82rem;
+}
+
+.formulario__exito {
+  margin-top: 16px;
+  color: #2e6b45;
+  font-size: 0.88rem;
 }
