@@ -1,0 +1,6 @@
+/* Por ahora solo dejamos una base mínima para formularios */
+input,
+select,
+textarea {
+  width: 100%;
+}
