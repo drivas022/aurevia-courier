@@ -20,3 +20,34 @@
 .seccion {
   padding: 80px 0;
 }
+
+/* Animación suave de entrada */
+.animacion-suave {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: aparecerSuave 0.9s ease forwards;
+}
+
+/* Pequeño delay para que no todo entre al mismo tiempo */
+.animacion-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animacion-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animacion-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.animacion-delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes aparecerSuave {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

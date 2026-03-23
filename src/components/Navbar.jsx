@@ -8,30 +8,40 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__contenedor">
-        {/* Nombre/logo del sitio */}
+        {/* Logo */}
         <Link to="/" className="navbar__logo">
           AUREVIA
         </Link>
 
         {/* Menú principal */}
         <nav className="navbar__menu">
-          {/* Estos enlaces llevan a secciones dentro de Inicio */}
           <a href="#servicios" className="navbar__link">
             Services
           </a>
+
           <a href="#cobertura" className="navbar__link">
             Coverage
           </a>
+
           <a href="#como-funciona" className="navbar__link">
-            Cómo Funciona
-          </a>
-          <a href="#sobre-nosotros" className="navbar__link">
-            Sobre Nosotros
+            How It Works
           </a>
 
-          {/* Este botón nos manda a la página Cotizador */}
+          <a href="#sobre-nosotros" className="navbar__link">
+            About Us
+          </a>
+
+          <a href="#faq" className="navbar__link">
+            FAQ
+          </a>
+
+          <a href="#contacto" className="navbar__link">
+            Contact
+          </a>
+
+          {/* Botón principal */}
           <Link to="/cotizador" className="navbar__boton">
-            Cotizador
+            Request a Quote
           </Link>
         </nav>
       </div>

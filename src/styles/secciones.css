@@ -36,22 +36,58 @@
 }
 
 .servicio__card {
+  position: relative;
   background-color: transparent;
   border: 1px solid var(--color-borde);
   padding: 28px 22px;
   min-height: 180px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.servicio__card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.35s ease;
+}
+
+.servicio__card:hover {
+  transform: translateY(-4px);
+  border-color: #111111;
+  background-color: #111111;
+}
+
+.servicio__card:hover::after {
+  opacity: 1;
+}
+
+.servicio__card:hover .servicio__titulo,
+.servicio__card:hover .servicio__texto {
+  color: #ffffff;
 }
 
 .servicio__titulo {
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 14px;
+  transition: color 0.35s ease;
 }
 
 .servicio__texto {
   color: var(--color-gris);
   font-size: 0.9rem;
   line-height: 1.7;
+  transition: color 0.35s ease;
 }
 
 /* ---------- COBERTURA ---------- */
@@ -63,9 +99,38 @@
 }
 
 .cobertura__card {
+  position: relative;
   border: 1px solid var(--color-borde);
   padding: 28px 24px;
   min-height: 170px;
+  background-color: transparent;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.cobertura__card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.35s ease;
+}
+
+.cobertura__card:hover {
+  transform: translateY(-4px);
+  border-color: #111111;
+  background-color: #fcfcfc;
+}
+
+.cobertura__card:hover::after {
+  opacity: 1;
 }
 
 .cobertura__numero {
@@ -98,6 +163,12 @@
   display: flex;
   align-items: flex-end;
   padding: 24px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.cobertura__imagen:hover {
+  transform: scale(1.01);
+  filter: contrast(1.02);
 }
 
 .cobertura__overlay {
@@ -200,9 +271,37 @@
 }
 
 .valor__card {
+  position: relative;
   border: 1px solid var(--color-borde);
   padding: 26px 22px;
   min-height: 160px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.valor__card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.35s ease;
+}
+
+.valor__card:hover {
+  transform: translateY(-4px);
+  border-color: #111111;
+  background-color: #fcfcfc;
+}
+
+.valor__card:hover::after {
+  opacity: 1;
 }
 
 .valor__titulo {
@@ -225,8 +324,36 @@
 }
 
 .faq__item {
+  position: relative;
   border: 1px solid var(--color-borde);
   background-color: transparent;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.faq__item::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.35s ease;
+}
+
+.faq__item:hover {
+  transform: translateY(-2px);
+  border-color: #111111;
+  background-color: #fbfbfb;
+}
+
+.faq__item:hover::after {
+  opacity: 1;
 }
 
 .faq__pregunta {
@@ -239,6 +366,7 @@
   align-items: center;
   cursor: pointer;
   color: var(--color-negro);
+  transition: color 0.3s ease;
 }
 
 .faq__respuesta {
@@ -339,5 +467,21 @@
 
   .proceso__numero {
     font-size: 2.3rem;
+  }
+}
+
+/* ---------- ANIMACIÓN SUAVE ---------- */
+.animacion-fade-up {
+  animation: fadeUpLuxury 1s ease both;
+}
+
+@keyframes fadeUpLuxury {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

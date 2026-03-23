@@ -8,17 +8,17 @@ function SeccionCobertura() {
   return (
     <section className="seccion seccion-cobertura" id="cobertura">
       <div className="contenedor">
-        {/* Texto pequeño superior */}
-        <p className="seccion__etiqueta">COVERAGE</p>
+        {/* Encabezado de la sección */}
+        <div className="seccion-cobertura__encabezado animacion-fade-up">
+          <p className="seccion__etiqueta">COVERAGE</p>
 
-        {/* Título */}
-        <h2 className="seccion__titulo">Global to Local</h2>
+          <h2 className="seccion__titulo">Global to Local</h2>
 
-        {/* Descripción */}
-        <p className="seccion__descripcion seccion__descripcion--ancha">
-          From anywhere in the world to every corner of Guatemala. Our network
-          ensures your shipments arrive with precision and care.
-        </p>
+          <p className="seccion__descripcion seccion__descripcion--ancha">
+            From anywhere in the world to every corner of Guatemala. Our network
+            ensures your shipments arrive with precision and care.
+          </p>
+        </div>
 
         {/* Tarjetas de estadísticas */}
         <div className="cobertura__grid">
@@ -31,7 +31,7 @@ function SeccionCobertura() {
           ))}
         </div>
 
-        {/* Imagen decorativa grande */}
+        {/* Imagen decorativa */}
         <div className="cobertura__imagen">
           <div className="cobertura__overlay">
             Delivering excellence to the heart of Central America.
