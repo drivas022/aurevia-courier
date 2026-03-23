@@ -1,70 +1,190 @@
-# Getting Started with Create React App
+# Aurevia Courier
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Documentation
 
-## Available Scripts
+### Technologies and versions
 
-In the project directory, you can run:
+This project was developed using the following technologies:
 
-### `npm start`
+- Node.js
+- npm
+- React
+- JavaScript
+- HTML
+- CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Recommended versions:**
+- Node.js 18 or later
+- npm 9 or later
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### How to run the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to run the project locally:
 
-### `npm run build`
+1. Clone the repository:
+```bash
+git clone <REPOSITORY_URL>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Enter the project folder:
+```bash
+cd aurevia-courier
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the development server:
+```bash
+npm start
+```
 
-### `npm run eject`
+5. Open the project in your browser:
+```bash
+http://localhost:3000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Relevant technical decisions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Component structure:** the interface is organized into reusable components to keep the code cleaner, more modular, and easier to maintain.
+- **Frontend organization:** the project separates structure, styles, and logic as much as possible to improve readability and make future changes easier.
+- **Routes:** the current structure allows the project to scale easily if new pages or sections are added later.
+- **Visual focus:** the application is mainly focused on presenting a clean and luxury-style user interface for the courier website.
+- **Scalability:** the structure makes it easier to add new sections, update the design, or connect the frontend to external services in the future.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### Project structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+aurevia-courier/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   │   ├── icons/
+│   │   └── images/
+│   │       └── hero-luxury.jpg
+│   ├── components/
+│   │   ├── Footer.jsx
+│   │   ├── FormularioContacto.jsx
+│   │   ├── FormularioCotizacion.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── SeccionCobertura.jsx
+│   │   ├── SeccionComoFunciona.jsx
+│   │   ├── SeccionContacto.jsx
+│   │   ├── SeccionFAQ.jsx
+│   │   ├── SeccionInicio.jsx
+│   │   ├── SeccionServicios.jsx
+│   │   └── SeccionSobreNosotros.jsx
+│   ├── data/
+│   │   ├── cobertura.js
+│   │   ├── faq.js
+│   │   └── servicios.js
+│   ├── pages/
+│   ├── styles/
+│   │   ├── cotizador.css
+│   │   ├── footer.css
+│   │   ├── formularios.css
+│   │   ├── globales.css
+│   │   ├── inicio.css
+│   │   ├── navbar.css
+│   │   └── secciones.css
+│   ├── utils/
+│   ├── App.js
+│   ├── index.css
+│   └── index.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### Brief explanation of each file and folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Root files
 
-### Analyzing the Bundle Size
+- **README.md:** contains the general documentation of the project.
+- **package.json:** defines the project configuration, dependencies, and available scripts.
+- **package-lock.json:** stores the exact dependency versions installed in the project.
+- **.gitignore:** specifies which files or folders Git should ignore.
+- **node_modules/:** contains all installed project dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### public/
 
-### Making a Progressive Web App
+- **public/:** stores static public files used by React before rendering the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### src/
 
-### Advanced Configuration
+- **src/App.js:** main component that organizes the structure of the website.
+- **src/index.js:** entry point that renders the React application.
+- **src/index.css:** base styles loaded globally when the app starts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### src/assets/
 
-### Deployment
+- **src/assets/icons/:** stores icons used in different sections of the website.
+- **src/assets/images/:** stores visual resources used by the interface.
+- **src/assets/images/hero-luxury.jpg:** main image used in the hero or landing section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### src/components/
 
-### `npm run build` fails to minify
+- **Footer.jsx:** footer of the page with final information and support content.
+- **FormularioContacto.jsx:** component for the contact form.
+- **FormularioCotizacion.jsx:** component for the quotation/request form.
+- **Navbar.jsx:** top navigation bar of the website.
+- **SeccionCobertura.jsx:** section that explains the delivery coverage or locations.
+- **SeccionComoFunciona.jsx:** section that explains the step-by-step process of the service.
+- **SeccionContacto.jsx:** section where the user can contact the business.
+- **SeccionFAQ.jsx:** frequently asked questions section.
+- **SeccionInicio.jsx:** main landing section presented when the user enters the website.
+- **SeccionServicios.jsx:** section that shows the services offered by the courier.
+- **SeccionSobreNosotros.jsx:** section that introduces the brand and explains who the business is.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### src/data/
+
+- **cobertura.js:** stores the data used in the coverage section.
+- **faq.js:** stores the questions and answers shown in the FAQ section.
+- **servicios.js:** stores the data related to the courier services.
+
+#### src/pages/
+
+- **src/pages/:** folder reserved for page-level views if the project grows or adds more routes later.
+
+#### src/styles/
+
+- **cotizador.css:** styles related to the quotation section or quotation form.
+- **footer.css:** styles used in the footer component.
+- **formularios.css:** styles shared by the forms.
+- **globales.css:** global styles such as colors, fonts, spacing, and general rules.
+- **inicio.css:** styles for the landing or main section.
+- **navbar.css:** styles for the navigation bar.
+- **secciones.css:** shared styles for the rest of the website sections.
+
+#### src/utils/
+
+- **src/utils/:** folder intended for helper functions or reusable logic.
+
+---
+
+### Website flow
+
+The website follows a landing page flow designed to guide the user from the first impression of the brand to direct contact.
+
+1. **Inicio:** the user enters the website and first sees the main presentation of Aurevia Courier, including the luxury image, the branding, and the service value.
+2. **Sobre nosotros:** after the first impression, the page explains what the brand is, what it offers, and the type of service it specializes in.
+3. **Servicios:** the user then sees the main services offered by the courier.
+4. **Cómo funciona:** this section explains the process the client should follow to use the service.
+5. **Cobertura:** the user can review where the service applies or how the delivery coverage works.
+6. **FAQ:** this part answers common questions before the user decides to continue.
+7. **Cotización y contacto:** after understanding the service, the user can fill out the quotation form or the contact form.
+8. **Footer:** the page ends with closing information and extra support content.
+
+In general, the flow of the website is designed so the user can **discover the brand**, **understand the service**, **resolve doubts**, and finally **request information or make contact**.
