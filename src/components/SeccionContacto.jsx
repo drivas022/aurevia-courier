@@ -23,12 +23,12 @@ function SeccionContacto() {
           <div className="contacto__info">
             <div className="contacto__bloque">
               <p className="contacto__label">EMAIL</p>
-              <p className="contacto__valor">concierge@aurevia.com</p>
+              <p className="contacto__valor">dmrivasa@correo.url.edu.gt</p>
             </div>
 
             <div className="contacto__bloque">
               <p className="contacto__label">PHONE</p>
-              <p className="contacto__valor">+502 1234 5678</p>
+              <p className="contacto__valor">+502 5412 2045</p>
             </div>
 
             <div className="contacto__bloque">
