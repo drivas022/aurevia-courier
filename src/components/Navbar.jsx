@@ -1,10 +1,29 @@
-// Importamos Link para navegar entre rutas
-import { Link } from "react-router-dom";
+// Importamos Link y hooks de React Router
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Importamos estilos del navbar
 import "../styles/navbar.css";
 
 function Navbar() {
+  // Hook para saber en qué ruta estamos
+  const location = useLocation();
+
+  // Hook para navegar entre páginas
+  const navigate = useNavigate();
+
+  // Función para ir a una sección del Home
+  const irASeccion = (idSeccion) => {
+    if (location.pathname === "/") {
+      const seccion = document.getElementById(idSeccion);
+
+      if (seccion) {
+        seccion.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(`/#${idSeccion}`);
+    }
+  };
+
   return (
     <header className="navbar">
       <div className="navbar__contenedor">
@@ -13,33 +32,57 @@ function Navbar() {
           AUREVIA
         </Link>
 
-        {/* Menú principal */}
+        {/* Menú */}
         <nav className="navbar__menu">
-          <a href="#servicios" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("servicios")}
+          >
             Services
-          </a>
+          </button>
 
-          <a href="#cobertura" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("cobertura")}
+          >
             Coverage
-          </a>
+          </button>
 
-          <a href="#como-funciona" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("como-funciona")}
+          >
             How It Works
-          </a>
+          </button>
 
-          <a href="#sobre-nosotros" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("sobre-nosotros")}
+          >
             About Us
-          </a>
+          </button>
 
-          <a href="#faq" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("faq")}
+          >
             FAQ
-          </a>
+          </button>
 
-          <a href="#contacto" className="navbar__link">
+          <button
+            type="button"
+            className="navbar__link navbar__link--button"
+            onClick={() => irASeccion("contacto")}
+          >
             Contact
-          </a>
+          </button>
 
-          {/* Botón principal */}
+          {/* Botón negro */}
           <Link to="/cotizador" className="navbar__boton">
             Request a Quote
           </Link>

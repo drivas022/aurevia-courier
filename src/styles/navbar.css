@@ -40,7 +40,7 @@
 
 .navbar__link {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   color: var(--color-negro);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -124,4 +124,11 @@
   .navbar__boton {
     font-size: 0.7rem;
   }
+}
+.navbar__link--button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
 }
