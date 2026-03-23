@@ -12,6 +12,8 @@ This project was developed using the following technologies:
 - JavaScript
 - HTML
 - CSS
+- Google Sheets
+- Google Apps Script
 
 **Recommended versions:**
 - Node.js 18 or later
@@ -52,11 +54,12 @@ http://localhost:3000
 
 ### Relevant technical decisions
 
-- **Component structure:** the interface is organized into reusable components to keep the code cleaner, more modular, and easier to maintain.
-- **Frontend organization:** the project separates structure, styles, and logic as much as possible to improve readability and make future changes easier.
-- **Routes:** the current structure allows the project to scale easily if new pages or sections are added later.
-- **Visual focus:** the application is mainly focused on presenting a clean and luxury-style user interface for the courier website.
-- **Scalability:** the structure makes it easier to add new sections, update the design, or connect the frontend to external services in the future.
+- The interface was divided into reusable React components to keep the project organized and easier to maintain.
+- Static content such as services, FAQ, and coverage was separated into data files for cleaner structure.
+- Styles were divided by sections and components to improve readability and future updates.
+- The contact form includes field validation before submission.
+- Contact requests are stored in Google Sheets through Google Apps Script.
+- The project keeps a clean and luxury-style visual approach aligned with the Aurevia Courier brand.
 
 ---
 
@@ -66,6 +69,11 @@ http://localhost:3000
 aurevia-courier/
 ├── node_modules/
 ├── public/
+│   ├── _redirects
+│   ├── aurevia.png
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
 ├── src/
 │   ├── assets/
 │   │   ├── icons/
@@ -88,6 +96,8 @@ aurevia-courier/
 │   │   ├── faq.js
 │   │   └── servicios.js
 │   ├── pages/
+│   │   ├── Cotizador.jsx
+│   │   └── Inicio.jsx
 │   ├── styles/
 │   │   ├── cotizador.css
 │   │   ├── footer.css
@@ -97,6 +107,7 @@ aurevia-courier/
 │   │   ├── navbar.css
 │   │   └── secciones.css
 │   ├── utils/
+│   │   └── cotizador.js
 │   ├── App.js
 │   ├── index.css
 │   └── index.js
@@ -113,78 +124,118 @@ aurevia-courier/
 #### Root files
 
 - **README.md:** contains the general documentation of the project.
-- **package.json:** defines the project configuration, dependencies, and available scripts.
-- **package-lock.json:** stores the exact dependency versions installed in the project.
-- **.gitignore:** specifies which files or folders Git should ignore.
-- **node_modules/:** contains all installed project dependencies.
+- **package.json:** stores the project configuration, dependencies, and scripts.
+- **package-lock.json:** keeps the exact installed versions of the dependencies.
+- **.gitignore:** indicates which files or folders should not be uploaded to Git.
+- **node_modules/:** contains all installed dependencies used by the project.
 
 #### public/
 
-- **public/:** stores static public files used by React before rendering the application.
+- **public/:** contains static files that React loads directly.
+- **_redirects:** file used to handle redirects in deployment environments.
+- **aurevia.png:** main logo or icon used by the website.
+- **index.html:** base HTML file where the React application is mounted.
+- **manifest.json:** defines metadata for the web app, such as name, icons, and behavior on supported devices.
+- **robots.txt:** gives instructions to search engine crawlers.
 
 #### src/
 
-- **src/App.js:** main component that organizes the structure of the website.
-- **src/index.js:** entry point that renders the React application.
-- **src/index.css:** base styles loaded globally when the app starts.
+- **src/:** contains the main source code of the application.
 
 #### src/assets/
 
-- **src/assets/icons/:** stores icons used in different sections of the website.
-- **src/assets/images/:** stores visual resources used by the interface.
-- **src/assets/images/hero-luxury.jpg:** main image used in the hero or landing section.
+- **assets/:** stores visual resources used by the interface.
+- **icons/:** folder reserved for icons used across the website.
+- **images/:** stores image files used in the project.
+- **hero-luxury.jpg:** main image used in the landing or hero section.
 
 #### src/components/
 
-- **Footer.jsx:** footer of the page with final information and support content.
-- **FormularioContacto.jsx:** component for the contact form.
-- **FormularioCotizacion.jsx:** component for the quotation/request form.
-- **Navbar.jsx:** top navigation bar of the website.
-- **SeccionCobertura.jsx:** section that explains the delivery coverage or locations.
-- **SeccionComoFunciona.jsx:** section that explains the step-by-step process of the service.
-- **SeccionContacto.jsx:** section where the user can contact the business.
-- **SeccionFAQ.jsx:** frequently asked questions section.
-- **SeccionInicio.jsx:** main landing section presented when the user enters the website.
-- **SeccionServicios.jsx:** section that shows the services offered by the courier.
-- **SeccionSobreNosotros.jsx:** section that introduces the brand and explains who the business is.
+- **components/:** contains reusable UI components used throughout the website.
+- **Footer.jsx:** renders the footer with final information and support content.
+- **FormularioContacto.jsx:** contact form component with validations and connection to Google Sheets.
+- **FormularioCotizacion.jsx:** quotation form component for users interested in requesting pricing information.
+- **Navbar.jsx:** top navigation bar for moving through the site.
+- **SeccionCobertura.jsx:** section that presents the service coverage.
+- **SeccionComoFunciona.jsx:** section that explains how the courier service works step by step.
+- **SeccionContacto.jsx:** section that contains the contact area and displays the contact form.
+- **SeccionFAQ.jsx:** section for frequently asked questions.
+- **SeccionInicio.jsx:** hero or main introductory section shown at the beginning of the website.
+- **SeccionServicios.jsx:** section that presents the main services offered by Aurevia Courier.
+- **SeccionSobreNosotros.jsx:** section that explains the brand identity and introduces the business.
 
 #### src/data/
 
-- **cobertura.js:** stores the data used in the coverage section.
-- **faq.js:** stores the questions and answers shown in the FAQ section.
-- **servicios.js:** stores the data related to the courier services.
+- **data/:** stores static data separated from the visual components.
+- **cobertura.js:** contains the data used in the coverage section.
+- **faq.js:** contains the questions and answers shown in the FAQ section.
+- **servicios.js:** contains the information displayed in the services section.
 
 #### src/pages/
 
-- **src/pages/:** folder reserved for page-level views if the project grows or adds more routes later.
+- **pages/:** contains page-level views of the application.
+- **Cotizador.jsx:** page focused on the quotation view or quotation-related content.
+- **Inicio.jsx:** main page that organizes and displays the website sections.
 
 #### src/styles/
 
-- **cotizador.css:** styles related to the quotation section or quotation form.
-- **footer.css:** styles used in the footer component.
-- **formularios.css:** styles shared by the forms.
-- **globales.css:** global styles such as colors, fonts, spacing, and general rules.
-- **inicio.css:** styles for the landing or main section.
+- **styles/:** stores the CSS files used to style the application.
+- **cotizador.css:** styles for the quotation page or quotation form.
+- **footer.css:** styles for the footer component.
+- **formularios.css:** shared styles for the forms.
+- **globales.css:** global styles such as typography, colors, spacing, and reusable rules.
+- **inicio.css:** styles for the main landing section.
 - **navbar.css:** styles for the navigation bar.
-- **secciones.css:** shared styles for the rest of the website sections.
+- **secciones.css:** shared styles used by the rest of the website sections.
 
 #### src/utils/
 
-- **src/utils/:** folder intended for helper functions or reusable logic.
+- **utils/:** contains helper logic or reusable functions.
+- **cotizador.js:** stores utility logic related to quotation calculations or quotation form behavior.
+
+#### Main application files
+
+- **App.js:** main component that defines the general structure of the React application.
+- **index.css:** base CSS file loaded when the app starts.
+- **index.js:** entry point that renders the React application into the DOM.
+
+---
+
+### Main files
+
+- **App.js:** organizes the main structure of the application.
+- **Inicio.jsx:** renders the main landing page sections.
+- **Cotizador.jsx:** handles the quotation view.
+- **FormularioContacto.jsx:** validates and sends contact data to Google Sheets.
+- **FormularioCotizacion.jsx:** manages the quotation request form.
+- **cotizador.js:** contains helper logic related to quotations.
 
 ---
 
 ### Website flow
 
-The website follows a landing page flow designed to guide the user from the first impression of the brand to direct contact.
+The website follows a simple landing page flow:
 
-1. **Inicio:** the user enters the website and first sees the main presentation of Aurevia Courier, including the luxury image, the branding, and the service value.
-2. **Sobre nosotros:** after the first impression, the page explains what the brand is, what it offers, and the type of service it specializes in.
-3. **Servicios:** the user then sees the main services offered by the courier.
-4. **Cómo funciona:** this section explains the process the client should follow to use the service.
-5. **Cobertura:** the user can review where the service applies or how the delivery coverage works.
-6. **FAQ:** this part answers common questions before the user decides to continue.
-7. **Cotización y contacto:** after understanding the service, the user can fill out the quotation form or the contact form.
-8. **Footer:** the page ends with closing information and extra support content.
+1. **Home**
+2. **About us**
+3. **Services**
+4. **How it works**
+5. **Coverage**
+6. **FAQ**
+7. **Quotation and contact forms**
+8. **Footer**
 
-In general, the flow of the website is designed so the user can **discover the brand**, **understand the service**, **resolve doubts**, and finally **request information or make contact**.
+The website is designed so the user can learn about the brand, understand the service, and submit a request easily.
+
+---
+
+### Contact form integration
+
+The contact form validates the following fields:
+
+- Name
+- Email
+- Phone number
+- Message
+
+When the form is submitted, the data is sent from React to a Google Apps Script endpoint. Then, the script stores each submission in a Google Sheets document.
