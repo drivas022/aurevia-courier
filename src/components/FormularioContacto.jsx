@@ -5,7 +5,7 @@ import { useState } from "react";
 import "../styles/formularios.css";
 
 function FormularioContacto() {
-  // Estado para guardar lo que escribe el usuario
+  // Estado para guardar los valores del formulario
   const [formulario, setFormulario] = useState({
     nombre: "",
     correo: "",
@@ -18,6 +18,9 @@ function FormularioContacto() {
 
   // Estado para mostrar mensaje de éxito
   const [enviado, setEnviado] = useState(false);
+
+  // Número de WhatsApp al que se enviará el mensaje
+  const numeroWhatsApp = "50254122045";
 
   // Función que actualiza los valores del formulario
   const manejarCambio = (e) => {
@@ -66,10 +69,24 @@ function FormularioContacto() {
       return;
     }
 
-    // Aquí luego podrías conectar Google Sheets
-    console.log("Formulario enviado:", formulario);
+    // Armamos el mensaje que se enviará por WhatsApp
+    const mensaje =
+      `Hola, quiero más información sobre sus servicios de courier.\n\n` +
+      `Nombre: ${formulario.nombre}\n` +
+      `Correo: ${formulario.correo}\n` +
+      `Teléfono: ${formulario.telefono}\n` +
+      `Mensaje: ${formulario.mensaje}`;
 
+    // Creamos el enlace de WhatsApp con el número y el mensaje
+    const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+      mensaje
+    )}`;
+
+    // Marcamos visualmente que todo salió bien
     setEnviado(true);
+
+    // Abrimos WhatsApp en una pestaña nueva
+    window.open(enlaceWhatsApp, "_blank");
 
     // Limpiamos el formulario
     setFormulario({
@@ -92,7 +109,9 @@ function FormularioContacto() {
           value={formulario.nombre}
           onChange={manejarCambio}
         />
-        {errores.nombre && <p className="formulario__error">{errores.nombre}</p>}
+        {errores.nombre && (
+          <p className="formulario__error">{errores.nombre}</p>
+        )}
       </div>
 
       <div className="formulario__grupo">
@@ -105,7 +124,9 @@ function FormularioContacto() {
           value={formulario.correo}
           onChange={manejarCambio}
         />
-        {errores.correo && <p className="formulario__error">{errores.correo}</p>}
+        {errores.correo && (
+          <p className="formulario__error">{errores.correo}</p>
+        )}
       </div>
 
       <div className="formulario__grupo">
@@ -139,12 +160,12 @@ function FormularioContacto() {
       </div>
 
       <button type="submit" className="formulario__boton">
-        SEND MESSAGE
+        SEND VIA WHATSAPP
       </button>
 
       {enviado && (
         <p className="formulario__exito">
-          Your message has been prepared successfully.
+          Your message was prepared and WhatsApp was opened successfully.
         </p>
       )}
     </form>
