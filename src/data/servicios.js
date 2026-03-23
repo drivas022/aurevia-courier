@@ -1,20 +1,30 @@
-// Guardando texto e información fija de los servicios
+// Este arreglo guarda la información de los servicios.
+// Lo hacemos aquí para no escribir todo directamente dentro del componente.
+
 const servicios = [
   {
-    titulo: "National Shipping",
-    descripcion: "Fast and secure deliveries within Guatemala."
-  },
-  {
+    id: 1,
     titulo: "International Shipping",
-    descripcion: "Worldwide shipments to Guatemala."
+    descripcion:
+      "Premium international shipping services from any part of the world to Guatemala."
   },
   {
+    id: 2,
+    titulo: "National Delivery",
+    descripcion:
+      "Luxury delivery coverage across Guatemala with secure and reliable logistics."
+  },
+  {
+    id: 3,
     titulo: "Home Pickup",
-    descripcion: "Pickup service from your location."
+    descripcion:
+      "White-glove pickup service from your preferred location with premium handling."
   },
   {
+    id: 4,
     titulo: "Express Service",
-    descripcion: "Priority delivery with reduced transit time."
+    descripcion:
+      "Priority handling and expedited delivery for urgent premium shipments."
   }
 ];
 

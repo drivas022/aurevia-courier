@@ -1,5 +1,136 @@
-.seccion h2 {
-  font-size: 2rem;
+/* Aqui estan los estilos para las secciones */
+.seccion {
+  padding: 100px 0;
+}
+
+.seccion__etiqueta {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--color-gris);
+  margin-bottom: 18px;
+}
+
+.seccion__titulo {
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
-  margin-bottom: 16px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.seccion__descripcion {
+  max-width: 620px;
+  color: var(--color-gris);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 42px;
+}
+
+.seccion__descripcion--ancha {
+  max-width: 760px;
+}
+
+/* ---------- SERVICIOS ---------- */
+.servicios__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.servicio__card {
+  background-color: transparent;
+  border: 1px solid var(--color-borde);
+  padding: 28px 22px;
+  min-height: 180px;
+}
+
+.servicio__titulo {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.servicio__texto {
+  color: var(--color-gris);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ---------- COBERTURA ---------- */
+.cobertura__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.cobertura__card {
+  border: 1px solid var(--color-borde);
+  padding: 28px 24px;
+  min-height: 170px;
+}
+
+.cobertura__numero {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.cobertura__titulo {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.cobertura__texto {
+  color: var(--color-gris);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.cobertura__imagen {
+  width: 100%;
+  height: 370px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.22)
+    ),
+    url("https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&w=1400&q=80")
+      center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.cobertura__overlay {
+  color: var(--color-blanco);
+  font-size: 0.95rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .servicios__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cobertura__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion {
+    padding: 72px 0;
+  }
+
+  .servicios__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cobertura__numero {
+    font-size: 2.4rem;
+  }
+
+  .cobertura__imagen {
+    height: 260px;
+  }
 }
