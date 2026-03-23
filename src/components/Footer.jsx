@@ -33,7 +33,7 @@ function Footer() {
 
       {/* Parte inferior */}
       <div className="footer__bottom">
-        <p>© 2026 AUREVIA. All rights reserved.</p>
+        <p>© 2026 AUREVIA. All rights reserved. By Diego Manuel Rivas Arguijo</p>
       </div>
     </footer>
   );

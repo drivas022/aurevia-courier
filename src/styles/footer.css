@@ -9,7 +9,7 @@
   margin: 0 auto;
   padding: 0 24px 32px;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 40px;
 }
 
@@ -22,12 +22,15 @@
 .footer__texto {
   color: #b8b8b8;
   font-size: 0.9rem;
-  max-width: 320px;
+  max-width: 340px;
+  line-height: 1.8;
 }
 
 .footer__titulo {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-bottom: 16px;
+  letter-spacing: 0.14em;
+  color: #d0d0d0;
 }
 
 .footer__columna {
