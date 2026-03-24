@@ -29,7 +29,7 @@ function Navbar() {
       <div className="navbar__contenedor">
         {/* Logo */}
         <Link to="/" className="navbar__logo">
-          AUREVIA
+          AeroPAQ
         </Link>
 
         {/* Menú */}
