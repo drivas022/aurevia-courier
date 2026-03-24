@@ -1,10 +1,10 @@
 # Aurevia Courier
 
-## Documentation
+## Documentación
 
-### Technologies and versions
+### Tecnologías y versiones
 
-This project was developed using the following technologies:
+Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 
 - Node.js
 - npm
@@ -15,55 +15,55 @@ This project was developed using the following technologies:
 - Google Sheets
 - Google Apps Script
 
-**Recommended versions:**
-- Node.js 18 or later
-- npm 9 or later
+**Versiones recomendadas:**
+- Node.js 18 o superior
+- npm 9 o superior
 
 ---
 
-### How to run the project
+### Cómo ejecutar el proyecto
 
-Follow these steps to run the project locally:
+Sigue estos pasos para ejecutar el proyecto de forma local:
 
-1. Clone the repository:
+1. Clona el repositorio:
 ```bash
 git clone <REPOSITORY_URL>
 ```
 
-2. Enter the project folder:
+2. Ingresa a la carpeta del proyecto:
 ```bash
 cd aurevia-courier
 ```
 
-3. Install dependencies:
+3. Instala las dependencias:
 ```bash
 npm install
 ```
 
-4. Start the development server:
+4. Inicia el servidor de desarrollo:
 ```bash
 npm start
 ```
 
-5. Open the project in your browser:
+5. Abre el proyecto en tu navegador:
 ```bash
 http://localhost:3000
 ```
 
 ---
 
-### Relevant technical decisions
+### Decisiones técnicas relevantes
 
-- The interface was divided into reusable React components to keep the project organized and easier to maintain.
-- Static content such as services, FAQ, and coverage was separated into data files for cleaner structure.
-- Styles were divided by sections and components to improve readability and future updates.
-- The contact form includes field validation before submission.
-- Contact requests are stored in Google Sheets through Google Apps Script.
-- The project keeps a clean and luxury-style visual approach aligned with the Aurevia Courier brand.
+- La interfaz fue dividida en componentes reutilizables de React para mantener el proyecto organizado y facilitar su mantenimiento.
+- El contenido estático, como servicios, preguntas frecuentes y cobertura, fue separado en archivos de datos para mantener una estructura más limpia.
+- Los estilos fueron divididos por secciones y componentes para mejorar la legibilidad y facilitar futuras actualizaciones.
+- El formulario de contacto incluye validación de campos antes de enviar la información.
+- Las solicitudes de contacto se almacenan en Google Sheets por medio de Google Apps Script.
+- El proyecto mantiene un enfoque visual limpio y elegante, alineado con la identidad de la marca Aurevia Courier.
 
 ---
 
-### Project structure
+### Estructura del proyecto
 
 ```bash
 aurevia-courier/
@@ -119,123 +119,123 @@ aurevia-courier/
 
 ---
 
-### Brief explanation of each file and folder
+### Explicación breve de cada archivo y carpeta
 
-#### Root files
+#### Archivos raíz
 
-- **README.md:** contains the general documentation of the project.
-- **package.json:** stores the project configuration, dependencies, and scripts.
-- **package-lock.json:** keeps the exact installed versions of the dependencies.
-- **.gitignore:** indicates which files or folders should not be uploaded to Git.
-- **node_modules/:** contains all installed dependencies used by the project.
+- **README.md:** contiene la documentación general del proyecto.
+- **package.json:** almacena la configuración del proyecto, dependencias y scripts.
+- **package-lock.json:** guarda las versiones exactas de las dependencias instaladas.
+- **.gitignore:** indica qué archivos o carpetas no deben subirse a Git.
+- **node_modules/:** contiene todas las dependencias instaladas que utiliza el proyecto.
 
 #### public/
 
-- **public/:** contains static files that React loads directly.
-- **_redirects:** file used to handle redirects in deployment environments.
-- **aurevia.png:** main logo or icon used by the website.
-- **index.html:** base HTML file where the React application is mounted.
-- **manifest.json:** defines metadata for the web app, such as name, icons, and behavior on supported devices.
-- **robots.txt:** gives instructions to search engine crawlers.
+- **public/:** contiene archivos estáticos que React carga directamente.
+- **_redirects:** archivo utilizado para manejar redirecciones en entornos de despliegue.
+- **aurevia.png:** logo o ícono principal utilizado por el sitio web.
+- **index.html:** archivo HTML base donde se monta la aplicación React.
+- **manifest.json:** define metadatos de la aplicación web, como nombre, íconos y comportamiento en dispositivos compatibles.
+- **robots.txt:** proporciona instrucciones a los motores de búsqueda y rastreadores web.
 
 #### src/
 
-- **src/:** contains the main source code of the application.
+- **src/:** contiene el código fuente principal de la aplicación.
 
 #### src/assets/
 
-- **assets/:** stores visual resources used by the interface.
-- **icons/:** folder reserved for icons used across the website.
-- **images/:** stores image files used in the project.
-- **hero-luxury.jpg:** main image used in the landing or hero section.
+- **assets/:** almacena recursos visuales utilizados en la interfaz.
+- **icons/:** carpeta reservada para los íconos usados en todo el sitio.
+- **images/:** almacena archivos de imagen utilizados en el proyecto.
+- **hero-luxury.jpg:** imagen principal utilizada en la sección inicial o hero.
 
 #### src/components/
 
-- **components/:** contains reusable UI components used throughout the website.
-- **Footer.jsx:** renders the footer with final information and support content.
-- **FormularioContacto.jsx:** contact form component with validations and connection to Google Sheets.
-- **FormularioCotizacion.jsx:** quotation form component for users interested in requesting pricing information.
-- **Navbar.jsx:** top navigation bar for moving through the site.
-- **SeccionCobertura.jsx:** section that presents the service coverage.
-- **SeccionComoFunciona.jsx:** section that explains how the courier service works step by step.
-- **SeccionContacto.jsx:** section that contains the contact area and displays the contact form.
-- **SeccionFAQ.jsx:** section for frequently asked questions.
-- **SeccionInicio.jsx:** hero or main introductory section shown at the beginning of the website.
-- **SeccionServicios.jsx:** section that presents the main services offered by Aurevia Courier.
-- **SeccionSobreNosotros.jsx:** section that explains the brand identity and introduces the business.
+- **components/:** contiene componentes reutilizables de la interfaz usados en todo el sitio web.
+- **Footer.jsx:** renderiza el pie de página con información final y contenido de apoyo.
+- **FormularioContacto.jsx:** componente del formulario de contacto con validaciones y conexión a Google Sheets.
+- **FormularioCotizacion.jsx:** componente del formulario de cotización para usuarios interesados en solicitar información de precios.
+- **Navbar.jsx:** barra de navegación superior para desplazarse por el sitio.
+- **SeccionCobertura.jsx:** sección que presenta la cobertura del servicio.
+- **SeccionComoFunciona.jsx:** sección que explica paso a paso cómo funciona el servicio de courier.
+- **SeccionContacto.jsx:** sección que contiene el área de contacto y muestra el formulario.
+- **SeccionFAQ.jsx:** sección de preguntas frecuentes.
+- **SeccionInicio.jsx:** sección principal o hero que se muestra al inicio del sitio web.
+- **SeccionServicios.jsx:** sección que presenta los principales servicios que ofrece Aurevia Courier.
+- **SeccionSobreNosotros.jsx:** sección que explica la identidad de la marca y presenta el negocio.
 
 #### src/data/
 
-- **data/:** stores static data separated from the visual components.
-- **cobertura.js:** contains the data used in the coverage section.
-- **faq.js:** contains the questions and answers shown in the FAQ section.
-- **servicios.js:** contains the information displayed in the services section.
+- **data/:** almacena datos estáticos separados de los componentes visuales.
+- **cobertura.js:** contiene los datos utilizados en la sección de cobertura.
+- **faq.js:** contiene las preguntas y respuestas mostradas en la sección de preguntas frecuentes.
+- **servicios.js:** contiene la información mostrada en la sección de servicios.
 
 #### src/pages/
 
-- **pages/:** contains page-level views of the application.
-- **Cotizador.jsx:** page focused on the quotation view or quotation-related content.
-- **Inicio.jsx:** main page that organizes and displays the website sections.
+- **pages/:** contiene las vistas principales de la aplicación.
+- **Cotizador.jsx:** página enfocada en la vista de cotización o contenido relacionado con cotizaciones.
+- **Inicio.jsx:** página principal que organiza y muestra las secciones del sitio web.
 
 #### src/styles/
 
-- **styles/:** stores the CSS files used to style the application.
-- **cotizador.css:** styles for the quotation page or quotation form.
-- **footer.css:** styles for the footer component.
-- **formularios.css:** shared styles for the forms.
-- **globales.css:** global styles such as typography, colors, spacing, and reusable rules.
-- **inicio.css:** styles for the main landing section.
-- **navbar.css:** styles for the navigation bar.
-- **secciones.css:** shared styles used by the rest of the website sections.
+- **styles/:** almacena los archivos CSS utilizados para dar estilo a la aplicación.
+- **cotizador.css:** estilos para la página o formulario de cotización.
+- **footer.css:** estilos para el componente de pie de página.
+- **formularios.css:** estilos compartidos para los formularios.
+- **globales.css:** estilos globales como tipografía, colores, espaciados y reglas reutilizables.
+- **inicio.css:** estilos para la sección principal de inicio.
+- **navbar.css:** estilos para la barra de navegación.
+- **secciones.css:** estilos compartidos utilizados por el resto de secciones del sitio.
 
 #### src/utils/
 
-- **utils/:** contains helper logic or reusable functions.
-- **cotizador.js:** stores utility logic related to quotation calculations or quotation form behavior.
+- **utils/:** contiene lógica auxiliar o funciones reutilizables.
+- **cotizador.js:** almacena lógica utilitaria relacionada con cálculos de cotización o comportamiento del formulario de cotización.
 
-#### Main application files
+#### Archivos principales de la aplicación
 
-- **App.js:** main component that defines the general structure of the React application.
-- **index.css:** base CSS file loaded when the app starts.
-- **index.js:** entry point that renders the React application into the DOM.
-
----
-
-### Main files
-
-- **App.js:** organizes the main structure of the application.
-- **Inicio.jsx:** renders the main landing page sections.
-- **Cotizador.jsx:** handles the quotation view.
-- **FormularioContacto.jsx:** validates and sends contact data to Google Sheets.
-- **FormularioCotizacion.jsx:** manages the quotation request form.
-- **cotizador.js:** contains helper logic related to quotations.
+- **App.js:** componente principal que define la estructura general de la aplicación React.
+- **index.css:** archivo CSS base que se carga al iniciar la aplicación.
+- **index.js:** punto de entrada que renderiza la aplicación React en el DOM.
 
 ---
 
-### Website flow
+### Archivos principales
 
-The website follows a simple landing page flow:
+- **App.js:** organiza la estructura principal de la aplicación.
+- **Inicio.jsx:** renderiza las secciones principales de la landing page.
+- **Cotizador.jsx:** maneja la vista de cotización.
+- **FormularioContacto.jsx:** valida y envía los datos de contacto a Google Sheets.
+- **FormularioCotizacion.jsx:** gestiona el formulario de solicitud de cotización.
+- **cotizador.js:** contiene la lógica auxiliar relacionada con las cotizaciones.
 
-1. **Home**
-2. **About us**
-3. **Services**
-4. **How it works**
-5. **Coverage**
-6. **FAQ**
-7. **Quotation and contact forms**
+---
+
+### Flujo del sitio web
+
+El sitio web sigue un flujo simple de tipo landing page:
+
+1. **Inicio**
+2. **Sobre nosotros**
+3. **Servicios**
+4. **Cómo funciona**
+5. **Cobertura**
+6. **Preguntas frecuentes**
+7. **Formularios de cotización y contacto**
 8. **Footer**
 
-The website is designed so the user can learn about the brand, understand the service, and submit a request easily.
+El sitio está diseñado para que el usuario conozca la marca, entienda el servicio y pueda enviar una solicitud fácilmente.
 
 ---
 
-### Contact form integration
+### Integración del formulario de contacto
 
-The contact form validates the following fields:
+El formulario de contacto valida los siguientes campos:
 
-- Name
-- Email
-- Phone number
-- Message
+- Nombre
+- Correo electrónico
+- Número de teléfono
+- Mensaje
 
-When the form is submitted, the data is sent from React to a Google Apps Script endpoint. Then, the script stores each submission in a Google Sheets document.
+Cuando el formulario se envía, los datos se mandan desde React a un endpoint de Google Apps Script. Luego, el script almacena cada envío en un documento de Google Sheets.
