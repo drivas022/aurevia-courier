@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer__contenedor">
         {/* Marca */}
         <div className="footer__marca">
-          <h2 className="footer__logo">AUREVIA</h2>
+          <h2 className="footer__logo">AeroPAQ</h2>
           <p className="footer__texto">
             Premium courier services delivering luxury logistics with precision
             and excellence.
